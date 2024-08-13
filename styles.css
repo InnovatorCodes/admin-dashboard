@@ -8,23 +8,30 @@
 body{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
 }
 
 .sidebar{
     background-color:   rgb(25, 146, 212);
     display: grid;
-    grid-template-rows: 1.2fr 6fr 3fr 6fr;
+    grid-template-rows: min-content auto;
+    min-width: 285px;
+}
+.sidebar-content{
+    display: grid;
+    grid-template-rows: 68px min-content min-content;
     gap: 30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
     color: white;
     font-size: 20px;
+    position: sticky;
+    top: 0;
 }
 
-.sidebar .title{
+.sidebar-content .title{
     display: grid;
     align-self: start;
     grid-auto-flow: column;
@@ -32,6 +39,7 @@ body{
     font-size: 30px;
     justify-self: start;
     align-self: center;
+    position: sticky;
 }
 
 .title > img{
@@ -44,12 +52,12 @@ body{
 
 .subsection.first{
     display: grid;
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(6,56px);
     align-items: center;
 }
 .subsection.second{
     display: grid;
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: repeat(3,56px);
     align-items: center;
 }
 .subsection div{
@@ -69,12 +77,12 @@ svg{
 
 .main{
     display: grid;
-    grid-template-rows: 1fr 4.5fr;
+    grid-template-rows: min-content 5fr;
 }
 
 .header{
     display: grid;
-    grid-template-rows: 1fr 1.5fr;
+    grid-template-rows: 1fr 1.3fr;
     padding: 1% 3%;
     padding-bottom: 0.5%;
     gap: 10%;
@@ -180,20 +188,20 @@ button{
     padding-left: 1.5%;
     padding-right: 2%;
     padding-top: 2%;
-    padding-bottom: 4%;
+    padding-bottom: 50px;
     grid-template-columns: 3fr 1fr;
-    gap:1.5%;
+    gap:20px;
     background-color: rgb(226, 232, 240);
+    min-width: 798px;
 }
 
 .projects{
     display: grid;
-    grid-template-rows: min-content auto;
     gap: 10px;
+    grid-template-rows: min-content auto;
 }
 
 .projects > .title{
-    font-size: 20px;
     height: min-content;
 }
 
@@ -201,13 +209,15 @@ button{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(420px,1fr));
     gap: 30px;
+    align-items: stretch;
+    align-self: stretch;
 }
 
 .projects .card{
     display: grid;
     grid-template-rows: min-content min-content auto;
     gap: 10px;
-    min-height: 210px;
+    min-height: 200px;
     background-color: white;
     border-left: 8px solid rgb(240, 180, 41);
     border-radius: 7px;
@@ -222,15 +232,21 @@ button{
 .projects .desc{
     color: rgb(99, 99, 99);
     font-weight: 400;
+    margin: 0;
+    max-height: 76px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .options{
     display: grid;
     grid-template-columns: 40px 40px 40px;
     gap: 10px;
-    justify-content: end;
+    align-self: end;
+    justify-self: end;
     justify-items: center;
     align-items: center;
+    height: 40px;
 }
 .card img{
     width: 30px;
@@ -243,11 +259,98 @@ button{
 
 .right{
     display: grid;
-    grid-template-rows: 1.1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: stretch;
+    align-content: space-between;
     gap: 20px;
 }
 
 .center{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+}
+
+.announcements{
+    display: grid;
+    grid-template-rows: min-content auto;
+    gap: 10px;
+    min-width: 285px;
+}
+.announcements > .title{
+    font-size: 20px;
+}
+
+.posts{
+    background-color: white;
+    border-radius: 7px;
+    padding: 20px;
+    display: grid;
+    gap: 15px;
+    grid-template-rows: repeat(auto-fit,70px 2px);
+    align-items: center;
+    box-shadow: 3px 3px 5px rgb(0 0 0 / 0.1);
+}
+
+.post:last-child{
+    border: none;
+}
+
+.post>.title{
+    font-size: 0.95rem;
+}
+.post>.desc{
+    font-size: 0.9rem;
+    color: rgb(99, 99, 99);
+    font-weight: 400;
+    max-height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.posts hr{
+    width: 100%;
+    justify-self: center;
+    height: 2px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.trending{
+    display: grid;
+    grid-template-rows: min-content auto;
+    gap: 10px;
+}
+
+.trending > .title{
+    font-size: 20px;
+}
+
+.trending > .users{
+    background-color: white;
+    border-radius: 7px;
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+    grid-template-rows: repeat(auto-fit,50px);
+    box-shadow: 3px 3px 5px rgb(0 0 0 / 0.1);
+}
+
+.user{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 50px auto;
+    gap: 20px;
+    height: min-content;
+}
+.user .userid{
+    font-weight: 400;
+}
+
+.user .desc{
+    font-weight: 400;
+    color: rgb(99, 99, 99);
+}
+
+.user > .pfp{
+    width: 50px;
 }
