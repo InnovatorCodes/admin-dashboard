@@ -12,28 +12,26 @@ body{
     margin: 0;
 }
 
-.title{
-    justify-self: start;
-    align-self: center;
-}
-
 .sidebar{
     background-color:   rgb(25, 146, 212);
     display: grid;
     grid-template-rows: 1.2fr 6fr 3fr 6fr;
     gap: 30px;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
     color: white;
     font-size: 20px;
 }
 
-.title{
+.sidebar .title{
     display: grid;
     align-self: start;
     grid-auto-flow: column;
     align-items: center;
     font-size: 30px;
+    justify-self: start;
+    align-self: center;
 }
 
 .title > img{
@@ -129,7 +127,7 @@ input:focus, input:focus-visible{
 
 .bottom{
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr max-content;
 }
 
 .greeting{
@@ -138,6 +136,8 @@ input:focus, input:focus-visible{
     grid-auto-flow: column;
     grid-template-columns: 90px auto;
     gap: 15px;
+    padding-right: 20px;
+    min-width: 350px;
 }
 
 .greeting div{
@@ -156,11 +156,12 @@ input:focus, input:focus-visible{
 }
 
 .bottom > div:last-child{
+    min-width: max-content;
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     justify-items: center;
-    gap: 7%;
+    gap: 20px;
     grid-template-columns: repeat(3,120px);
     justify-content: center;
 }
