@@ -40,6 +40,10 @@ body{
     width: 50px;
 }
 
+.subsection{
+    padding-left: 15px;
+}
+
 .subsection.first{
     display: grid;
     grid-template-rows: repeat(6,1fr);
@@ -58,7 +62,7 @@ body{
 }
 
 .subsection img{
-    width: 30px;
+    width: 25px;
 }
 
 svg{
@@ -67,18 +71,107 @@ svg{
 
 .main{
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 4.5fr;
 }
 
 .header{
     display: grid;
     grid-template-rows: 1fr 1.5fr;
-    padding: 1% 2%;
+    padding: 1% 3%;
+    padding-bottom: 0.5%;
+    gap: 10%;
+    z-index: 1;
+    box-shadow: 3px 0 10px rgb(0 0 0 / 0.3);
 }
 
 .top{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 3.5fr 1fr;
+    align-items: center;
+}
+
+.top > div:first-child{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: start;
+    grid-template-columns: 50px auto;
+    height: 100%;
+    align-items: center;
+}
+.top input{
+    height: 70%;
+    width: 70%;
+    border-radius: 30px;
+    background-color: rgb(226, 232, 240);
+    border: none;
+    padding: 5px 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+input:focus, input:focus-visible{
+    outline: 1px solid black;
+    background-color: white;
+}
+
+.top > div:last-child{
+    display: grid;
+    height: 100%;
+    align-items: center;
+    grid-auto-flow: column;
+    gap: 25px;
+    grid-template-columns: 30px 50px auto;
+}
+
+.top .pfp{
+    width: 50px;
+}
+
+.bottom{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.greeting{
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-template-columns: 90px auto;
+    gap: 15px;
+}
+
+.greeting div{
+    display: grid;
+}
+
+.greeting .pfp{
+    width: 80px;
+}
+
+.greeting p{
+    margin: 0;
+}
+.greeting p:last-child{
+    font-size: 30px;
+}
+
+.bottom > div:last-child{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    gap: 7%;
+    grid-template-columns: repeat(3,120px);
+    justify-content: center;
+}
+
+button{
+    background-color:   rgb(25, 146, 212);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 15px;
 }
 
 .content{
@@ -89,6 +182,11 @@ svg{
     padding-bottom: 4%;
     grid-template-columns: 3fr 1fr;
     gap:1.5%;
+    background-color: rgb(226, 232, 240);
+}
+
+.header img{
+    width: 25px;
 }
 
 .right{
