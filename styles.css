@@ -8,7 +8,7 @@
 body{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -185,6 +185,57 @@ button{
     gap:1.5%;
     background-color: rgb(226, 232, 240);
 }
+
+.projects{
+    display: grid;
+    grid-template-rows: min-content auto;
+    gap: 10px;
+}
+
+.projects > .title{
+    font-size: 20px;
+    height: min-content;
+}
+
+.projects > .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(395px,1fr));
+    gap: 30px;
+}
+
+.projects .card{
+    display: grid;
+    grid-template-rows: min-content min-content auto;
+    gap: 10px;
+    min-height: 210px;
+    background-color: white;
+    border-left: 8px solid rgb(240, 180, 41);
+    border-radius: 7px;
+    padding: 20px;
+    box-shadow: 3px 3px 5px rgb(0 0 0 / 0.1);
+}
+
+.projects .title{
+    font-size: 20px;
+}
+
+.projects .desc{
+    color: rgb(99, 99, 99);
+    font-weight: 400;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    gap: 10px;
+    justify-content: end;
+    justify-items: center;
+    align-items: center;
+}
+.card img{
+    width: 30px;
+}
+
 
 .header img{
     width: 25px;
